@@ -61,6 +61,7 @@ export const getText = (element: Vertex | Edge | SubGraph): string => {
     text = removeMarkdown(element.text);
   }
 
+  text = text.replace(/<br\s*\/?>(?=\s*|$)/gi, "\n").replace(/\\n/g, "\n");
   return removeFontAwesomeIcons(text);
 };
 

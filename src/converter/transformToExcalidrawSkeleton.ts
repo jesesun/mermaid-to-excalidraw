@@ -2,7 +2,7 @@ import { ExcalidrawElementSkeleton } from "@excalidraw/excalidraw/types/data/tra
 import { Arrow, Line, Node, Text } from "../elementSkeleton.js";
 
 export const normalizeText = (text: string) => {
-  return text.replace(/\\n/g, "\n");
+  return text.replace(/<br\s*\/?>(?=\s*|$)/gi, "\n").replace(/\\n/g, "\n");
 };
 
 export const transformToExcalidrawLineSkeleton = (line: Line) => {
