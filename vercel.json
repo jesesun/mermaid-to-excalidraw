@@ -1,0 +1,6 @@
+{
+  "buildCommand": "yarn run build:playground",
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "trailingSlash": false
+}

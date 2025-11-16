@@ -12,7 +12,7 @@
     "build": "rimraf -rf ./dist && cross-env tsc -b src",
     "test:code": "eslint --max-warnings=0 --ext .js,.ts,.tsx .",
     "start": "vite playground",
-    "build:playground": "tsc --noEmit --project ./playground/tsconfig.json && vite build playground",
+    "build:playground": "node ./node_modules/typescript/lib/tsc.js --noEmit -p ./playground/tsconfig.json && node ./node_modules/vite/dist/node/cli.js build playground",
     "preview": "yarn run build:playground && vite preview --outDir ./public",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
